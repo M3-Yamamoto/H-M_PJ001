@@ -1,5 +1,7 @@
 <?php
 
+use App\University;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,11 +12,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('home', function () {
-    return view('home');
-});
+Route::resource('admin','UniversityController');
+Route::resource('public','PublicController');
