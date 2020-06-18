@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="{{'css/style.css'}}">
 
     <title>University</title>
 
@@ -50,8 +51,27 @@
             <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
-                <h1>Example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <div class="row">
+                  <div class="col-4">
+                    <img src="{{'images/sharemeImage.svg'}}" class="paperlogo1">
+                  </div>     
+                  <div class="col-8">
+                    <div class="row">
+                      <h5>Hello Learner !</h5>
+                    </div>
+                    <div class="row">
+                      <h1>Share your lecture, note, knowledge, skill with others.</h1>
+                    </div>
+                    <div class="row">
+                      ShareMe allow you to share all your homework, knowledge, skill and various learners from all university can learn from each other.  
+                    </div>
+                    <br>
+                    <div class="row">
+                      <button class='b-sharewithus'><span>Share With Us</span></button>
+                      <button class='b-browseposts'><span>Browse Posts</span></button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
