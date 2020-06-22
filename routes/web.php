@@ -14,3 +14,4 @@ use App\University;
 */
 Route::resource('admin','UniversityController');
 Route::resource('public','PublicController');
+Route::resource('posts','PostController');
