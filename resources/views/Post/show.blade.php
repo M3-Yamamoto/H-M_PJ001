@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    hello post {{postId}}
+    <h1>{{$post->title}}</h1>
+    <p>{{$post->body}}</p>
 </body>
 </html>

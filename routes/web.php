@@ -14,4 +14,5 @@ use App\University;
 */
 Route::resource('admin','UniversityController');
 Route::resource('public','PublicController');
-Route::resource('posts','PostController');
+Route::get('post','PostController@index');
+Route::get('post/{id}','PostController@show');
