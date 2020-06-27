@@ -18,4 +18,17 @@ class PostController extends Controller
         // die($post);
         return view('Post.show',compact('post'));
     }
+    public function create()
+    {
+        return view('Post.create');
+    }
+    public function store()
+    {
+        $post=new Post();
+        $post->title=request('ptitle');
+        $post->body=request('pbody');
+        $post->save();
+        return redirect('/post');
+
+    }
 }

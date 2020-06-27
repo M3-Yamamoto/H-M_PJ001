@@ -18,14 +18,14 @@ class CreatePostTable extends Migration
             $table->timestamps();
             $table->string('title');
             $table->text('body');
-            $table->string('imagepath');
-            $table->integer('likes');
-            $table->integer('dislikes');
-            $table->integer('userId');
-            $table->integer('catagoryId');
-            $table->integer('majorId');
-            $table->integer('commentId');
-            $table->integer('reportId');
+            $table->string('imagepath')->nullable()->change();
+            // $table->integer('likes');
+            // $table->integer('dislikes');
+            // $table->integer('userId');
+            // $table->integer('catagoryId');
+            // $table->integer('majorId');
+            // $table->integer('commentId');
+            // $table->integer('reportId');
         });
     }
 
