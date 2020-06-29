@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>{{$post->title}}</h1>
-    <p>{{$post->body}}</p>
+    <!-- {{ $post->md_body_html }} -->
+    {!! Markdown::convertToHtml(e($post->body)) !!}
 </body>
 </html>
