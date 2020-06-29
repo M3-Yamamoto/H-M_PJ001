@@ -18,11 +18,11 @@ class CreatePostTable extends Migration
             $table->timestamps();
             $table->string('title');
             $table->text('body');
-            $table->string('imagepath')->nullable()->change();
+            // $table->string('imagepath')->nullable()->change();
             // $table->integer('likes');
             // $table->integer('dislikes');
             // $table->integer('userId');
-            // $table->integer('catagoryId');
+            // $table->foreign('catagoryId')->references('id')->on('catagory');
             // $table->integer('majorId');
             // $table->integer('commentId');
             // $table->integer('reportId');
