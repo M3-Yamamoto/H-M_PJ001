@@ -50,8 +50,27 @@
             <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
-                <h1>Example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <div class="row">
+                  <div class="col-4">
+                    <img src="{{'images/sharemeImage.svg'}}" class="paperlogo1">
+                  </div>  
+                  <div class="col-8">
+                    <div class="row">
+                      <h5>Hello Learner !</h5>
+                    </div>
+                    <div class="row">
+                      <h1>Share your lecture, note, knowledge, skill with others.</h1>
+                    </div>
+                    <div class="row">
+                      ShareMe allow you to share all your homework, knowledge, skill and various learners from all university can learn from each other.
+                    </div>
+                    <br>
+                    <div class="row">
+                      <button class='b-sharewithus'><span>Share With Us</span></button>
+                      <button class='b-browseposts'><span>Browse Posts</span></button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -91,19 +110,21 @@
       <div class="container">
         <div class="row">
             @foreach($universities as $university)
-          <div class="col-md-3">
-              <div class="mb-4 box">
+          <div class="col-sm-2">
+              <div class="col-mb-3 box">
                 <div class="card-body">
-                   <h5>{{ $university->name}}</h5>
-                  @if($university->image)
-                      <a href="/public/{{ $university->id }}"><img src="{{'/images/'.$university->image}}" width="100" height="70"></a>
+                  @if($university->logo)
+                      <a href="/public/{{ $university->id }}"><img src="{{'/logo/'.$university->logo}}" width="shrink-to-fit" height="80"></a>
                     @endif
-                </div>
+                    <br>
+                <h18>{{ $university->name}}</h18>
               </div>
             </div>
+          </div>
             @endforeach
         </div>
       </div>
+          {{ $universities->links() }}
       </div>
     </main>
     <footer class="blog-footer">

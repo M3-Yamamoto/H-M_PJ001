@@ -2,13 +2,16 @@
 
 @section("content")
     <div class="container">
-      <h2>{{ $university->name }}</h2>
-      <img src="{{'/images/'.$university->image}}" width="100" height="70" alt="">
-      <br>
-      <li>About - {{ $university->about}}</li>
-      <li>Collaboration - {{ $university->collaboration}}</li>
-      <li>address - {{ $university->address}}</li>
-      <li>phone - {{ $university->phone}}</li>
+      <h2>{{ $university->name }}</h2><hr>
+      <img src="{{'/logo/'.$university->logo}}" width="80" height="70" alt=""> <br><hr>
+      <img src="{{'/building_images/'.$university->building_image}}" width="50" height="70" alt=""> <br><br><hr>
+      <img src="{{'/campus_images/'.$university->campus_image}}" width="50" height="70" alt="">
+      <br><hr>
+      About - {{ $university->about}}<hr>
+      Major - {{ $university->major}}<hr>
+      Collaboration - {{ $university->collaboration}}<hr>
+      Contact - {{ $university->address }} <hr>
+
       <br>
       <a href="/admin/{{ $university->id }}/edit"> <button class="btn btn-success">Edit</button></a>
 
