@@ -48,7 +48,7 @@ class PublicController extends Controller
      */
     public function show($id)
     {
-        
+    
         $university = University::find($id);
         
         return view('Public.show',compact('university'));

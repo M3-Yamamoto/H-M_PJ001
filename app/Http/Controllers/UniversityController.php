@@ -37,25 +37,34 @@ class UniversityController extends Controller
      */
     public function store()
     {
-        
-      $validatedData =  request()->validate([
-        'name' => 'required',
-        'rimage' => 'required|image',
-        'about' => 'required',
-        'collaboration' => 'required',
-        'address' => 'required',
-        'phone' => 'required',
-          
-        ]);
-        
-        $imageName = date('YmdHis') . "." . request()->rimage->getClientOriginalExtension();
-        request()->rimage->move(public_path('images'), $imageName);
 
-        $university = University::create($validatedData + ['image'=>$imageName]);
+     $validatedData = request()->validate([
 
-        // $recipe = Recipe::create($validatedData + ['author_id' => auth()->id()]);
+     'name' => 'required',
+     'about' => 'required',
+     'major' => 'required',
+     'limage' => 'required|image',
+     'bimage' => 'required|image',
+     'cimage' => 'required|image',
+     'collaboration' => 'required',
+     'address' => 'required',
 
-        return redirect("admin");
+     ]);
+
+
+     $logoName = date('YmdHis') . "." . request()->limage->getClientOriginalExtension();
+     request()->limage->move(public_path('logo'), $logoName);
+
+     $building_imageName = date('YmdHis') . "." . request()->bimage->getClientOriginalExtension();
+     request()->bimage->move(public_path('building_images'), $building_imageName);
+
+     $campus_imageName = date('YmdHis') . "." . request()->cimage->getClientOriginalExtension();
+     request()->cimage->move(public_path('campus_images'), $campus_imageName);
+
+     $university = University::create($validatedData+['logo'=>$logoName,'building_image'=>$building_imageName,'campus_image'=>$campus_imageName]);
+
+
+     return redirect("admin");
     }
 
     /**
@@ -66,9 +75,8 @@ class UniversityController extends Controller
      */
     public function show($id)
     {
-
         $university = University::find($id);
-        
+
         return view('Admin.show',compact('university'));
     }
 
@@ -78,9 +86,10 @@ class UniversityController extends Controller
      * @param  \App\University  $university
      * @return \Illuminate\Http\Response
      */
-    public function edit(University $university)
+    public function edit($id)
     {
-        //
+        $university = University::find($id);
+        return view('Admin.edit',compact('university'));
     }
 
     /**
@@ -90,9 +99,42 @@ class UniversityController extends Controller
      * @param  \App\University  $university
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, University $university)
+    public function update($id)
     {
-        //
+      $university = University::find($id);
+
+      $validatedData = request()->validate
+
+      ([
+          'name' => 'required',
+          'major' => 'required',
+          'logo' => 'image',
+          'bimage' => 'image',
+          'cimage' => 'image',
+          'collaboration' => 'required',
+          'address' => 'required',
+        ]);
+
+      $university->update($validatedData);
+        if(request()->limage) {
+          //upload image
+          $logoName = date('YmdHis') . "." . request()->limage->getClientOriginalExtension();
+          request()->limage->move(public_path('logo'), $logoName);
+        }
+
+        if(request()->bimage){
+          $building_imageName = date('YmdHis') . "." . request()->bimage->getClientOriginalExtension();
+          request()->bimage->move(public_path('building_images'), $building_imageName);
+        }
+
+        if(request()->cimage){
+          $campus_imageName = date('YmdHis') . "." . request()->cimage->getClientOriginalExtension();
+          request()->cimage->move(public_path('campus_images'), $campus_imageName);
+        }
+
+        $university->update($validatedData + ['logo'=> empty($logoName) ? null : $logoName,'building_image'=>empty($building_imageName) ? null : $building_imageName,'campus_image' =>empty($campus_imageName) ? null : $campus_imageName]);
+
+          return redirect("admin");
     }
 
     /**
