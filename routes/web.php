@@ -1,6 +1,7 @@
 <?php
 
-use App\University;
+use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +15,12 @@ use App\University;
 */
 Route::resource('admin','UniversityController');
 Route::resource('public','PublicController');
+
+//---------------------------
+// Post Controller
+// Route::resource('post','PostController');
+Route::get('post','PostController@index');
+Route::get('post/create','PostController@create');
+Route::post('post','PostController@store');
+Route::get('post/{id}','PostController@show');
+//---------------------------

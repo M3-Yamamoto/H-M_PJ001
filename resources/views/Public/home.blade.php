@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-    <link rel="stylesheet" href="{{'css/style.css'}}">
 
     <title>University</title>
 
@@ -55,6 +54,7 @@
                   <div class="col-4">
                     <img src="{{'images/sharemeImage.svg'}}" class="paperlogo1">
                   </div>
+
                   <div class="col-8">
                     <div class="row">
                       <h5>Hello Learner !</h5>
