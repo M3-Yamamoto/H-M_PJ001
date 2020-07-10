@@ -51,7 +51,8 @@
                 <div class="row">
                   <div class="col-4">
                     <img src="{{'images/sharemeImage.svg'}}" class="paperlogo1">
-                  </div>  
+                  </div>
+
                   <div class="col-8">
                     <div class="row">
                       <h5>Hello Learner !</h5>
