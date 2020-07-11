@@ -9,12 +9,10 @@
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
     <title>University</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">

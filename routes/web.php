@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('admin','UniversityController');
+// Route::resource('admin','UniversityController');
 Route::resource('public','PublicController');
 
-//---------------------------
-// Post Controller
-// Route::resource('post','PostController');
-Route::get('post','PostController@index');
-Route::get('post/create','PostController@create');
-Route::post('post','PostController@store');
-Route::get('post/{id}','PostController@show');
-//---------------------------
+
+Route::group(['namespace' => 'User'], function () {
+    Route::get('user/post', 'PostController@index')->name('post');
+});
+
+Route::group(['namespace' => 'Admin'], function () {
+    Route::get('admin/home',function (){
+        return view('admin/home');
+    });
+    Route::resource('admin/post', 'PostController');
+    Route::resource('admin/tag', 'TagController');
+    Route::resource('admin/catagory', 'CatagoryController');
+});
