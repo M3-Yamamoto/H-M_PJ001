@@ -143,8 +143,10 @@ class UniversityController extends Controller
      * @param  \App\University  $university
      * @return \Illuminate\Http\Response
      */
-    public function destroy(University $university)
+    public function destroy($id)
     {
-        //
+      $university = University::find($id);
+      $university->delete($university);
+      return redirect("admin");
     }
 }

@@ -15,3 +15,28 @@
     font-family: fantasy;
     font-size: 20px;
 }
+
+.row-header {
+
+	margin: 0px auto;
+	padding: 0px auto;
+}
+
+.row-content {
+	margin: 0px auto;
+	padding: 50px 0px 50px 0px;
+	border-bottom: 1px ridge;
+	min-height: 400px;
+}
+
+.footer {
+	background-color: #000080;
+	margin: 0px auto;
+	padding: 20px 0px 20px 0px;
+}
+
+.address {
+	font-size: 80%;
+	margin: 0px;
+	color: #000080;
+}
